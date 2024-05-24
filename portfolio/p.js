@@ -42,20 +42,20 @@ const tSite = document.getElementById('t-site')
 
 link.addEventListener('click',(event)=> {
     event.preventDefault();
-    var urlToOpen = "https://www.linkedin.com/in/hariharachandru-v-747ba0265/"
+    var urlToOpen = "https://www.linkedin.com/in/hariharachandru-front-end-developer/"
     window.open(urlToOpen,'_blank')
   });
 
 git.addEventListener("click",(event)=>{
     event.preventDefault();
-    var urlToOpen = "https://github.com/Chandru070"
+    var urlToOpen = "https://github.com/Harii10"
     window.open(urlToOpen,'_blank')
 })  
 
 
 bSite.addEventListener("click",(event)=>{
     event.preventDefault();
-    var urlToOpen = "https://chandru070.github.io/first-Design/"
+    var urlToOpen = "https://harii10.github.io/landing-page/"
     window.open(urlToOpen,'_blank')
 })
 
