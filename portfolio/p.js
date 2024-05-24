@@ -111,7 +111,8 @@ function validateName() {
     }
   }
 
-  function validateForm() {
+  function validateForm(e) {
+    e.preventDefault()
     validateName();
     validateEmail();
     validatePhoneNumber();
