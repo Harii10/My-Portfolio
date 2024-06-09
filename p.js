@@ -39,6 +39,7 @@ const git = document.getElementById('git')
 const resume = document.getElementById('resume')
 const bSite = document.getElementById('b-site')
 const tSite = document.getElementById('t-site')
+const wSite = document.getElementById('w-site')
 
 link.addEventListener('click',(event)=> {
     event.preventDefault();
@@ -63,6 +64,12 @@ tSite.addEventListener("click",(event)=>{
     event.preventDefault()
     var urlToOpen = "https://hberlin07.github.io/Text-Speaker/"
     window.open(urlToOpen,'_blank')
+})
+
+wSite.addEventListener("click",(event)=>{
+  event.preventDefault();
+  var urlToOpen = "https://main--denay.netlify.app/"
+  window.open(urlToOpen,'_blank')
 })
 
 // function validateName() {
