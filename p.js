@@ -72,105 +72,33 @@ wSite.addEventListener("click",(event)=>{
   window.open(urlToOpen,'_blank')
 })
 
-// function validateName() {
-//     var nameInput = document.getElementById("i-name");
-//     var nameError = document.getElementById("name_error");
-
-//     nameError.textContent = "";
-
-//     if (nameInput.value.trim() === "") {
-//       nameError.textContent = "Name is required.";
-//     }
-//   }
-
-//   function validateEmail() {
-//     var emailInput = document.getElementById("i-email");
-//     var emailError = document.getElementById("email_error");
-//     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//     emailError.textContent = "";
-
-//     if (!emailPattern.test(emailInput.value)) {
-//       emailError.textContent = "Enter a valid email address.";
-//     }
-//   }
-
-//   function validatePhoneNumber() {
-//     var phoneNumberInput = document.getElementById("i-number");
-//     var phoneNumberError = document.getElementById("number_error");
-//     var phoneNumberPattern = /^\d{10}$/;
-
-//     phoneNumberError.textContent = "";
-
-//     if (!phoneNumberPattern.test(phoneNumberInput.value)) {
-//       phoneNumberError.textContent = "Enter a valid 10-digit phone number.";
-//     }
-//   }
-
-//   function validateMessage() {
-//     var messageInput = document.getElementById("i-text");
-//     var messageError = document.getElementById("text_error");
-
-//     messageError.textContent = "";
-
-//     if (messageInput.value.trim() === "") {
-//       messageError.textContent = "Message cannot be empty.";
-//     }
-//   }
-
-//   function validateForm() {
-//     validateName();
-//     validateEmail();
-//     validatePhoneNumber();
-//     validateMessage();
-
-//     var errors = document.querySelectorAll(".error");
-//     if (!Array.from(errors).some(error => error.textContent !== "")) {
-//       alert("Form is valid! Submitting...");
-      
-//     }
-//   }
-
-//   var form = document.getElementById("myForm");
-//   var submitButton = document.querySelectorAll('btn');
-
-//   form.addEventListener("input", function(event) {
-//     if (event.target.tagName === "INPUT") {
-//       validateForm();
-      
-//     }
-//   })
-
 const form = document.getElementById("myForm")
 const name = document.getElementById("i-name")
 const email = document.getElementById("i-email")
 const phone = document.getElementById("i-number")
 const subject = document.getElementById("i-subject")
 const message = document.getElementById("i-text")
-
+const input = document.querySelector("input")
 
 function sendEmail(){
   const bodyMessage = `Full Name: ${name.values} <br> Email: ${email.values} <br> Mobile Number: ${phone.values} <br> Message: ${message.values} <br>`
-  Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "hariharachandru30@gmail.com",
-    Password : "46065661F79EBBFFAD515DABE533443B625D",
-    To : 'hariharachandru30@gmail.com',
-    From : "hariharachandru30@gmail.com",
-    Subject : subject.value,
-    Body : bodyMessage
-}).then(
-  message => {
-    if(message == "OK"){
+  if(input.value.trim() ==  "" || message == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Invalid",
+        text: "Fill Out the Fields",
+      })
+    }
+    
+    else{
       Swal.fire({
         title: "Message Sent!",
         text: "Successfully!",
         icon: "success"
-      });
-      
+      })
     }
+    bodyMessage = " "
   }
-);
 }
 form.addEventListener("submit", (e) => {
   e.preventDefault()
