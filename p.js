@@ -79,10 +79,11 @@ const phone = document.getElementById("i-number")
 const subject = document.getElementById("i-subject")
 const message = document.getElementById("i-text")
 const input = document.querySelector("input")
-
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 function sendEmail(){
+  
   const bodyMessage = `Full Name: ${name.values} <br> Email: ${email.values} <br> Mobile Number: ${phone.values} <br> Message: ${message.values} <br>`
-  if(input.value.trim() ==  "" || message == ""){
+    if(input.value.trim() ==  "" || message == ""){
       Swal.fire({
         icon: "error",
         title: "Invalid",
@@ -99,7 +100,7 @@ function sendEmail(){
     }
     bodyMessage = " "
   }
-}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   sendEmail()
