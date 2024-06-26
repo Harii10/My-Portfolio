@@ -68,7 +68,7 @@ tSite.addEventListener("click",(event)=>{
 
 wSite.addEventListener("click",(event)=>{
   event.preventDefault();
-  var urlToOpen = "https://main--denay.netlify.app/"
+  var urlToOpen = " https://harii10.github.io/weather-app/"
   window.open(urlToOpen,'_blank')
 })
 
